@@ -6,11 +6,40 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  
+  <style>
+    #map{
+      height:400px;
+      width:600px;
+      margin: auto;
+      border: 3px solid pink;
+    }
+  </style>
+  
 </head>
 <body>
+
+  <nav>
+    {% block nav %}
+      {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
+      {% block nav-login %} <a href="{% url 'login' %}">Login</a> {% endblock %}
+    {% endblock %}
+  </nav>
+  
+  <header>
+    {% block header %}
+    {% endblock %}
+  </header>
+  
   <main>
     {% block content %}
     {% endblock %}
   </main>
+  
+  <footer>
+    {% block footer %}
+    {% endblock %}
+  </footer>
+  
 </body>
 </html>
