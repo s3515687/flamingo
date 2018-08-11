@@ -57,7 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #'DIRS': [],
         
-        #login
+        #html
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         
         'APP_DIRS': True,
@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 #added
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#added login
+#added login redirection
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -134,7 +134,7 @@ LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
-#ssl for map
+#ssl for map?
 #SECURE_SSL_REDIRECT = True
 SECURE_SSL_REDIRECT = False
 

@@ -1,12 +1,6 @@
-<!-- index -->
-
-<!-- <!DOCTYPE html> -->
-
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
-
-
 
 {% block nav-login %}
   {% if user.is_authenticated %}
@@ -19,7 +13,7 @@
 {% block content %}
   {% if user.is_authenticated %}
     
-    Hi {{ user.username }}!
+    Welcome {{ user.username }}!
   
     <!-- start MAP -->
     <div id="map"></div>

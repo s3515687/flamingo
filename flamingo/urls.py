@@ -15,19 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 
-#from django.urls import path
-#added
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 
+#keep in order top to bottm
 urlpatterns = [
-    #added html files
+    #path(url address, path to view, url name)
+
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    
+    #authenticate
     path('admin/', admin.site.urls),
     
-    #added login
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    #signup
+    path('', include('accounts.urls')),
+    #login
+    path('', include('django.contrib.auth.urls')),
+    
+    #put in map app
+    #path('map/',views.Map.as_view(), name='map'),
+    #path('', include('map.urls')),
 ]
 
