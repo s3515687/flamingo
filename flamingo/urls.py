@@ -19,10 +19,12 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 #added
 from django.conf.urls.static import static
+#added
+#from django.conf import settings
 
-#keep in order top to bottm
+#keep in order top to bottom
 urlpatterns = [
-    #path(url address, path to view, url name)
+    # path(url address, path to view, url name) #
 
     #home view
       path('', TemplateView.as_view(template_name='home.html'), name='home'),
@@ -33,9 +35,13 @@ urlpatterns = [
       path('', include('accounts.urls')),
     #login
       path('', include('django.contrib.auth.urls')),
-    
-    #put in map app
-      #path('map/',views.Map.as_view(), name='map'),
-      #path('', include('map.urls')),
+    #map
+      path('', include('map.urls')),
 ]
+
+#dev test
+#] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
 

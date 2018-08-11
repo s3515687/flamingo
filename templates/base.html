@@ -1,58 +1,61 @@
-<!-- main template -->
+{% load static %}
+
 <!DOCTYPE html>
 
 <html>
-  <head>
 
-    {% load static %}
-    <meta charset="utf-8">
+  <head>
     <title>{% block title %}Index{% endblock %}</title>
     
-    <!--<link rel="stylesheet" href="{% static 'css/style.css' %}" />-->
-  
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
-  
-    <style>
-      #map{
-        height:400px;
-        width:600px;
-        margin: auto;
-        border: 3px solid pink;
-      }
-    </style>
+    <meta charset="utf-8">
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    
+    <!-- css -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- font -->
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     
   </head>
 
   <body>
-
     <nav>
+      <div class="nav">
       {% block nav %}
         {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
         {% block nav-login %} <a href="{% url 'login' %}">Login</a> {% endblock %}
-      
+        
         {% block nav-signup %} <a href="{% url 'signup' %}">Sign Up</a> {% endblock %}
+        
+        {% block nav-map %} <a href="{% url 'map' %}">View Map</a> {% endblock %}
+        
         {% block nav-admin %} <a href="{% url 'admin:index' %}">Admin</a> {% endblock %}
-      
+        
         {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %}
-        <!-- {% block pass-change %} <a href="{% url 'password_change' %}">Change password</a> {% endblock %} -->
+        {% block pass-change %} <a href="{% url 'password_change' %}">Change password</a> {% endblock %}
       {% endblock %}
+      </div>
     </nav>
   
     <header>
-      {% block header %}
-      {% endblock %}
+      <div class="header">
+      {% block header %} {% endblock %}
+      </div>
     </header>
-  
-
-      {% block content %}
-      {% endblock %}
-
+    
+    <main>
+      {% block content %} {% endblock %}
+    </main>
   
     <footer>
-      {% block footer %}
-      {% endblock %}
+      <div class="footer">
+      {% block footer %} {% endblock %}
+      </div>
     </footer>
-  
   </body>
+  
 </html>

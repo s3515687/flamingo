@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'map',
 ]
 
 MIDDLEWARE = [
@@ -55,11 +56,7 @@ ROOT_URLCONF = 'flamingo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [],
-        
-        #html
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,7 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'flamingo.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -122,9 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 #added
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    'flamingo/static/',
+)
 
 #added login redirection
 LOGIN_REDIRECT_URL = 'home'
