@@ -6,9 +6,9 @@
 
     {% load static %}
     <meta charset="utf-8">
-    <title> {% block title %}Index{% endblock %} </title>
+    <title>{% block title %}Index{% endblock %}</title>
   
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="shortcut icon" href="{% static 'icon/favicon.ico' %}"/>
     
     <!--<link rel="stylesheet" href="{% static 'css/style.css' %}" />-->
   
@@ -46,10 +46,10 @@
       {% endblock %}
     </header>
   
-    <main>
+
       {% block content %}
       {% endblock %}
-    </main>
+
   
     <footer>
       {% block footer %}

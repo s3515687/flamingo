@@ -17,22 +17,25 @@ from django.contrib import admin
 
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+#added
+from django.conf.urls.static import static
 
 #keep in order top to bottm
 urlpatterns = [
     #path(url address, path to view, url name)
 
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    #home view
+      path('', TemplateView.as_view(template_name='home.html'), name='home'),
     #authenticate
-    path('admin/', admin.site.urls),
+      path('admin/', admin.site.urls),
     
     #signup
-    path('', include('accounts.urls')),
+      path('', include('accounts.urls')),
     #login
-    path('', include('django.contrib.auth.urls')),
+      path('', include('django.contrib.auth.urls')),
     
     #put in map app
-    #path('map/',views.Map.as_view(), name='map'),
-    #path('', include('map.urls')),
+      #path('map/',views.Map.as_view(), name='map'),
+      #path('', include('map.urls')),
 ]
 
