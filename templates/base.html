@@ -1,45 +1,60 @@
-<!-- main -->
-
+<!-- main template -->
 <!DOCTYPE html>
 
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
-  
-  <style>
-    #map{
-      height:400px;
-      width:600px;
-      margin: auto;
-      border: 3px solid pink;
-    }
-  </style>
-  
-</head>
-<body>
+  <head>
 
-  <nav>
-    {% block nav %}
-      {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
-      {% block nav-login %} <a href="{% url 'login' %}">Login</a> {% endblock %}
-    {% endblock %}
-  </nav>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>{% block title %}Index{% endblock %}</title>
   
-  <header>
-    {% block header %}
-    {% endblock %}
-  </header>
+    <link rel="shortcut icon" href="{% static 'icon/favicon.ico' %}"/>
+    
+    <!--<link rel="stylesheet" href="{% static 'css/style.css' %}" />-->
   
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
   
-  <footer>
-    {% block footer %}
-    {% endblock %}
-  </footer>
+    <style>
+      #map{
+        height:400px;
+        width:600px;
+        margin: auto;
+        border: 3px solid pink;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+
+    <nav>
+      {% block nav %}
+        {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
+        {% block nav-login %} <a href="{% url 'login' %}">Login</a> {% endblock %}
+      
+        {% block nav-signup %} <a href="{% url 'signup' %}">Sign Up</a> {% endblock %}
+        {% block nav-admin %} <a href="{% url 'admin:index' %}">Admin</a> {% endblock %}
+      
+        <!-- {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %} -->
+        <!-- {% block pass-change %} <a href="{% url 'password_change' %}">Change password</a> {% endblock %} -->
+      {% endblock %}
+    </nav>
   
-</body>
+    <header>
+      {% block header %}
+      {% endblock %}
+    </header>
+  
+
+      {% block content %}
+      {% endblock %}
+
+  
+    <footer>
+      {% block footer %}
+      {% endblock %}
+    </footer>
+  
+  </body>
 </html>

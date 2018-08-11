@@ -1,12 +1,6 @@
-<!-- index -->
-
-<!-- <!DOCTYPE html> -->
-
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
-
-
 
 {% block nav-login %}
   {% if user.is_authenticated %}
@@ -16,10 +10,19 @@
   {% endif %}
 {% endblock %}
 
+nav-signup
+{% block nav-signup %}
+  {% if user.is_authenticated %}
+    <a href="{% url 'signup' %}"></a>
+  {% else %}
+    <a href="{% url 'signup' %}">Sign Up</a>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
   {% if user.is_authenticated %}
     
-    Hi {{ user.username }}!
+    Welcome {{ user.username }}!
   
     <!-- start MAP -->
     <div id="map"></div>
