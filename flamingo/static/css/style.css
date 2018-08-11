@@ -1,0 +1,35 @@
+#map{
+  height:400px;
+  width:600px;
+  margin: auto;
+  border: 3px solid pink;
+}
+
+body {
+    background: white url("images/background.jpg") no-repeat;
+    padding-left: 15px;
+}
+
+
+h1{
+    color: #FCA205;
+    font-family: 'Lobster';
+}
+
+.nav {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.footer {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
