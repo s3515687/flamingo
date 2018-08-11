@@ -34,7 +34,7 @@
         {% block nav-signup %} <a href="{% url 'signup' %}">Sign Up</a> {% endblock %}
         {% block nav-admin %} <a href="{% url 'admin:index' %}">Admin</a> {% endblock %}
       
-        <!-- {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %} -->
+        {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %}
         <!-- {% block pass-change %} <a href="{% url 'password_change' %}">Change password</a> {% endblock %} -->
       {% endblock %}
     </nav>
