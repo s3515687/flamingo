@@ -23,23 +23,6 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav">
-      {% block nav %}
-        {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
-        {% block nav-login %} <a href="{% url 'login' %}">Login</a> {% endblock %}
-        
-        {% block nav-signup %} <a href="{% url 'signup' %}">Sign Up</a> {% endblock %}
-        
-        {% block nav-map %} <a href="{% url 'map' %}">View Map</a> {% endblock %}
-        
-        {% block nav-admin %} <a href="{% url 'admin:index' %}">Admin</a> {% endblock %}
-        
-        {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %}
-        {% block pass-change %} <a href="{% url 'password_change' %}">Change password</a> {% endblock %}
-      {% endblock %}
-      </div>
-    </nav>
   
     <header>
       <div class="header">
@@ -47,13 +30,32 @@
       </div>
     </header>
     
+    <nav>
+      <div class="nav">
+      {% block nav %}
+        {% block nav-home %} <a href="{% url 'home' %}">Home</a> {% endblock %}
+        {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Logout</a>
+          <a href="{% url 'signup' %}"></a>
+        {% else %}
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+        {% block nav-map %} <a href="{% url 'map' %}">View Map</a> {% endblock %}
+        {% endblock %}
+      </div>
+    </nav>
+    
     <main>
       {% block content %} {% endblock %}
     </main>
   
     <footer>
       <div class="footer">
-      {% block footer %} {% endblock %}
+      {% block footer %}
+        {% block nav-admin %} <a href="{% url 'admin:index' %}">Admin</a> {% endblock %}
+        {% block pass-reset %} <a href="{% url 'password_reset' %}">Lost password?</a> {% endblock %}
+      {% endblock %}
       </div>
     </footer>
   </body>
