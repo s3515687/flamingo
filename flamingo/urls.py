@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 #added
 #from django.conf import settings
 
-#keep in order top to bottom
+#load order - top to bottom
 urlpatterns = [
     # path(url address, path to view, url name) #
 

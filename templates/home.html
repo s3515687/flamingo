@@ -4,11 +4,14 @@
 
 {% block content %}
 
-  {% if user.is_authenticated %}
-    <h2>Home</h2>
-    Welcome {{ user.username }}!
-  {% else %}
-    <p>You are not logged in/p>
-  {% endif %}
+    <h1>Flamingo Car Share :)</h1>
+
+    {% if user.is_authenticated %}
+      Welcome {{ user.username }}!
+    {% else %}
+      <h3>Welcome!</h3>
+      <p>You are not currently logged in.</p>
+    {% endif %}
+
   
 {% endblock %}
