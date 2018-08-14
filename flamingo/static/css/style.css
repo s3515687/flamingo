@@ -4,6 +4,7 @@
   margin: auto;
   border: 3px solid black;
   box-sizing: content-box;
+  max-width: none;
 }
 
 html {
@@ -28,10 +29,6 @@ h1 {
     color: #e040fb;
     text-shadow: 2px 2px 5px white;
 }
-
-//.jumbotron {
-  //background-image: url({% static 'img/jumbo-bg.jpg' %});
-//}
 
 
 
