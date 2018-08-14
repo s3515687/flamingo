@@ -6,14 +6,6 @@
   box-sizing: content-box;
 }
 
-#footer {
-    //position: fixed;
-    //left: 0;
-    //bottom: 0;
-    //width: 100%;
-    //text-align: center;
-}
-
 html {
   position: relative;
   min-height: 100%;
@@ -32,6 +24,14 @@ body {
   background-color: #f5f5f5;
 }
 
-h1{
+h1 {
     color: #e040fb;
+    text-shadow: 2px 2px 5px white;
 }
+
+//.jumbotron {
+  //background-image: url({% static 'img/jumbo-bg.jpg' %});
+//}
+
+
+
